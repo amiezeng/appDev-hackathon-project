@@ -1062,12 +1062,56 @@
         <a class="nav-link" data-page="rules">📖 <span>Rules</span></a>
       </div>
       
-      <div class="user-info">
+      <div class="user-info" onclick="showPage('profile')" role="button" title="Open profile" style="cursor: pointer;">
         <span style="color: var(--neon-cyan);">👤</span>
         <span id="userName">Player</span>
       </div>
     </div>
   </nav>
+
+  <!-- Profile Page -->
+  <div id="profile" class="page">
+    <div class="container">
+      <div style="display: flex; justify-content:space-between; align-items:center; margin-bottom:24px;">
+        <div>
+          <h1 style="display: flex; align-items: center; gap: 16px; margin-bottom: 8px;">
+            <span style="color: var(--neon-cyan);">👤</span>
+            <span id="Profile">Profile</span>
+          </h1>
+        </div>
+        
+        <div style="display: flex; gap: 16px; align-items: flex-start; flex-wrap: wrap;">
+          <div>
+            <div style="display: flex; align-items: center; gap: 8px; padding: 8px 16px;">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <h2>Update Your Information</h2>
+        </div>
+        <form id="profileForm">
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            <div>
+              <label for="profileName">Name</label>
+              <input type="text" id="profileName" placeholder="Enter your name" required>
+            </div>
+            <div>
+              <label for="profileEmail">Email</label>
+              <input type="email" id="profileEmail" placeholder="Enter your email" required>
+            </div>
+            <div>
+              <label for="profileAvatar">Avatar URL</label>
+              <input type="url" id="profileAvatar" placeholder="Enter avatar image URL">
+            </div>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
   <!-- Toast Notification -->
   <div id="toast" class="toast">
@@ -2116,6 +2160,7 @@
     if (state.user.name === 'Player') {
       setTimeout(promptForName, 500);
     }
+
   </script>
 </body>
 </html>
